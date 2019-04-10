@@ -2,7 +2,7 @@ import { Data } from "./../data/Data";
 
 export class Source {
     private name: string;
-    public data: Array<any> = [];
+    public data: Array<Data> = [];
     public events: Array<string>;
 
     constructor(name: string, events: Array<string>) {
@@ -11,11 +11,6 @@ export class Source {
     }
 
     public startCollect() {
-        for(const event of this.events){
-            document.addEventListener(event, (e) => {
-                this.data.push(new Data(event, e));
-            });
-        }
     }
 
     public getData() {
