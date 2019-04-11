@@ -16,6 +16,8 @@ export class PredictorWebService {
     private httpServer: http.Server; 
     private wss: WebSocket.Server;
 
+
+    private oldImageData: Data;
     constructor(url: string, portApi: number, portWebSocket: number) {
         this.url = url;
         this.portApi = portApi;
@@ -26,11 +28,26 @@ export class PredictorWebService {
         this.httpServer = http.createServer(this.app);
         this.wss = new WebSocket.Server({port: this.portWebSocket});
 
-
         this.wss.on('connection', (ws: WebSocket) => {
+            const that = this;
             ws.on('message', (message: string) => {
-                console.log('received: %s', message);
-                ws.send(`Hello, you sent -> ${message}`);
+                const jsonMsg = JSON.parse(message);
+                const data: Array<Data> = jsonMsg.map(d => new Data(d.name, d.data, d.size, d.timestamp));
+                let image = data.find(val => {
+                    return val.getName() === 'screen';
+                });
+                if(image) {
+                    that.saveImage(image);
+                    that.applyDataToImage(image, data)
+                        .then(val => {
+                            ws.send(val);
+                        });
+                } else {
+                    that.applyDataToImage(that.oldImageData, data)
+                        .then(val => {
+                            ws.send(val);
+                        });
+                }
             });
         });
     }
@@ -50,47 +67,6 @@ export class PredictorWebService {
             res.send(generateFakeResponse());
         });
 
-        this.app.post('/trainData', function (req, res) {
-            console.log('Received data');
-            const data: Array<Data> = req.body.map(d => new Data(d.name, d.data, d.size, d.timestamp));
-            console.dir(data);
-            const image = data.find(val => {
-               return val.getName() === 'screen';
-            });
-            const mouseClicks = data.filter(val => {
-                return val.getName() === 'click';
-            });
-            const mouseMovements = data.filter(val => {
-                return val.getName() === 'mousemove';
-            });
-            const keyboard = data.filter(val => {
-                return val.getName() === 'keydown';
-            });
-            if(image){
-                const canvas = createCanvas(image.getSize().width, image.getSize().height);
-                const ctx = canvas.getContext('2d');
-                const img = new Image();
-                img.onload = () => {
-                    that.printImage(img, ctx);
-                    that.printMouseClick(mouseClicks, ctx);
-                    that.printMouseMove(mouseMovements, ctx);
-                    that.printKeyboard(keyboard, ctx);
-                    const base64data = canvas.toBuffer();
-                    fs.writeFile('./trainingDatas/' + image.getTimestamp() + '.png', base64data, 'base64', function(err){
-                        if (err) throw err;
-                        console.log('File saved.');
-                        res.send('ok - image received');
-                    })
-                };
-                img.onerror = err => { throw err };
-                img.src = image.getData();
-
-
-            } else {
-                res.send('ok - only datas');
-            }
-        });
-
         this.app.listen(this.portApi, () => {
             console.log('PredictorWebService is up and running on port: %d', this.portApi);
         }); 
@@ -107,7 +83,7 @@ export class PredictorWebService {
     }
 
     printMouseMove(mousemoves: Array<Data>, ctx: any) {
-        ctx.strokeStyle = 'rgba(0,0,0,0.5)';
+        ctx.strokeStyle = 'rgba(0,0,0,0.8)';
         ctx.lineWidth = 5;
         ctx.beginPath();
         for(const move of mousemoves){
@@ -122,5 +98,48 @@ export class PredictorWebService {
 
     printImage(image: Image, ctx: any){
         ctx.drawImage(image, 0, 0);
+    }
+
+    applyDataToImage(image: Data, data: Array<Data>) {
+        return new Promise((resolve, reject) => {
+            const mouseClicks = data.filter(val => {
+                return val.getName() === 'click';
+            });
+            const mouseMovements = data.filter(val => {
+                return val.getName() === 'mousemove';
+            });
+            const keyboard = data.filter(val => {
+                return val.getName() === 'keydown';
+            });
+            if (image) {
+                const canvas = createCanvas(image.getSize().width, image.getSize().height);
+                const ctx = canvas.getContext('2d');
+                const img = new Image();
+                img.onload = () => {
+                    this.printImage(img, ctx);
+                    this.printMouseClick(mouseClicks, ctx);
+                    this.printMouseMove(mouseMovements, ctx);
+                    this.printKeyboard(keyboard, ctx);
+                    const base64data = canvas.toBuffer();
+                    fs.writeFile('./trainingDatas/' + image.getTimestamp() + '-' + Date.now() + '.png', base64data, 'base64', function (err) {
+                        if (err) throw err;
+                        console.log('File saved.');
+                        resolve('ok - image received');
+                    })
+                };
+                img.onerror = err => {
+                    throw err
+                };
+                img.src = image.getData();
+            } else {
+                resolve('ok - only datas');
+            }
+        });
+
+    }
+    saveImage(image: Data) {
+        if(image) {
+            this.oldImageData = image;
+        }
     }
 }

@@ -12,14 +12,14 @@ function main() {
         ]);
 
     gatherer.start();
-    startPrediction(gatherer);
+    //startPrediction(gatherer);
     startGathering(gatherer);
   
 }
 
 function startPrediction(gatherer: Gatherer) {
     const sender: Sender = new Sender(() => gatherer.getData(), 'localhost:4000/predict', 10000);
-    sender.start()
+    sender.start('http')
         .subscribe(
             val => {
                 console.log(val);
@@ -29,8 +29,8 @@ function startPrediction(gatherer: Gatherer) {
 
 
 function startGathering(gatherer: Gatherer) {
-    const sender: Sender = new Sender(() => gatherer.getData(), 'localhost:4000/trainData', 3000);
-    sender.start()
+    const sender: Sender = new Sender(() => gatherer.getData(), 'localhost:4100/', 3000);
+    sender.start('ws')
         .subscribe(
             val => {
                 console.log(val);

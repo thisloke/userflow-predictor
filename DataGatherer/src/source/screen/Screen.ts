@@ -13,11 +13,10 @@ export class Screen extends Source {
             if (document.body) {
                 Html2CanvasStatic(document.body, {logging: false})
                     .then((canvas) => {
-                        console.log(canvas);
                         const imgData = canvas.toDataURL("image/png");
                         this.data.push(new Data('screen', imgData, {width: window.innerWidth, height: window.innerHeight}))
                     });
             }
-        }, 3000);
+        }, 5000);
     }
 }
