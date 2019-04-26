@@ -9,7 +9,7 @@ export class Gatherer {
     }
 
     public start() {
-        for(const source of this.sources){
+        for (const source of this.sources) {
             source.startCollect();
         }
     }

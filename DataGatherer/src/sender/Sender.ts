@@ -1,7 +1,7 @@
 import { interval, Observable, of } from 'rxjs';
 import { filter, flatMap, delay } from 'rxjs/operators';
 import { Rxios } from 'rxios';
-import {Data} from "../data/Data";
+import {Data} from "../shared/Data";
 
 export class Sender {
     private url: string;
@@ -36,7 +36,6 @@ export class Sender {
                 this.wsConnect.send(JSON.stringify(data));
                 return new Observable((observer) => {
                     this.wsConnect.onmessage = (msg) => {
-                        console.log(msg);
                         observer.next(msg);
                     };
                 });

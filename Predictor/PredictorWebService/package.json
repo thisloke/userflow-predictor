@@ -10,6 +10,7 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "nodemon": "^1.18.10",
+    "query-string-parser": "^0.2.3",
     "ws": "^6.2.1"
   },
   "devDependencies": {
@@ -20,10 +21,11 @@
     "typescript-eslint-parser": "^22.0.0"
   },
   "scripts": {
-    "build": "tsc -w",
-    "dev": "ts-node ./src/main.ts",
-    "start": "nodemon ./dist/main.js",
-    "prod": "npm run build && npm run start"
+    "build:ws": "tsc -w",
+    "dev:ws": "ts-node src/predictor-web-service/main.ts",
+    "dev:imageCreator": "ts-node src/image-creator/main.ts",
+    "start:ws": "nodemon ./dist/main.js",
+    "prod:ws": "npm run build:ws && npm run start:ws"
   },
   "author": "",
   "license": "ISC"

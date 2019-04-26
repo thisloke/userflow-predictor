@@ -1,6 +1,6 @@
 import { Source } from '../Source';
 import Html2CanvasStatic from "html2canvas";
-import {Data} from "../../data/Data";
+import {Data} from "../../shared/Data";
 
 export class Screen extends Source {
 
@@ -9,7 +9,7 @@ export class Screen extends Source {
     }
 
     public startCollect() {
-        const interval = setInterval(() => {
+       /* const interval = setInterval(() => {
             if (document.body) {
                 Html2CanvasStatic(document.body, {logging: false})
                     .then((canvas) => {
@@ -17,6 +17,6 @@ export class Screen extends Source {
                         this.data.push(new Data('screen', imgData, {width: window.innerWidth, height: window.innerHeight}))
                     });
             }
-        }, 5000);
+        }, 500);*/
     }
 }

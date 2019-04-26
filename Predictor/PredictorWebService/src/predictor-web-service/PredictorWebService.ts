@@ -4,8 +4,8 @@ import * as http from 'http';
 import cors from 'cors';
 import * as bodyParser from "body-parser";
 import fs from 'fs';
-import {Data} from "../../../../DataGatherer/src/data/Data";
-import {createCanvas, Image} from "canvas";
+import {Data} from "../../../../DataGatherer/src/shared/Data";
+import parser from 'query-string-parser';
 
 export class PredictorWebService {
 
@@ -16,44 +16,40 @@ export class PredictorWebService {
     private httpServer: http.Server; 
     private wss: WebSocket.Server;
 
+    private counter: number = 0;
 
-    private oldImageData: Data;
     constructor(url: string, portApi: number, portWebSocket: number) {
         this.url = url;
         this.portApi = portApi;
         this.portWebSocket = portWebSocket;
     }
 
-    public startWebSocket() {
+    public startTrainer() {
         this.httpServer = http.createServer(this.app);
         this.wss = new WebSocket.Server({port: this.portWebSocket});
 
-        this.wss.on('connection', (ws: WebSocket) => {
+        this.wss.on('connection', (ws: WebSocket, req: any) => {
+            let url = require('url').parse(req.url).query;
+            const queryObj = parser.fromQuery(url);
             const that = this;
             ws.on('message', (message: string) => {
                 const jsonMsg = JSON.parse(message);
                 const data: Array<Data> = jsonMsg.map(d => new Data(d.name, d.data, d.size, d.timestamp));
-                let image = data.find(val => {
-                    return val.getName() === 'screen';
-                });
-                if(image) {
-                    that.saveImage(image);
-                    that.applyDataToImage(image, data)
-                        .then(val => {
-                            ws.send(val);
-                        });
-                } else {
-                    that.applyDataToImage(that.oldImageData, data)
-                        .then(val => {
-                            ws.send(val);
-                        });
-                }
+                that.counter++;
+                that.saveData(data, queryObj.flowName, queryObj.agentName)
+                    .then( (msg) => {
+                        if(msg === 'ok') {
+                            ws.send('trainer - Data saved');
+                        }
+                    })
+                    .catch( (err) => {
+                        ws.send('trainer - Error while saving data');
+                    });
             });
         });
     }
 
-    public startExpress() {
-        const that = this;
+    public startPredictor() {
         this.app = express();
         this.app.use(cors());
         this.app.use(bodyParser.json());
@@ -63,83 +59,38 @@ export class PredictorWebService {
             function generateFakeResponse() {
                 return Array.from({length: 20}, () => Math.random().toPrecision(2));
             }
-            console.log('Request prediction');
+            console.log('predictor - Request prediction');
             res.send(generateFakeResponse());
         });
 
         this.app.listen(this.portApi, () => {
-            console.log('PredictorWebService is up and running on port: %d', this.portApi);
+            console.log('predictor - up and running on port: %d', this.portApi);
         }); 
     }
 
-    printMouseClick(mouseclicks: Array<Data>, ctx: any) {
-        ctx.strokeStyle = 'rgba(219, 10, 91, 0.5)';
-        ctx.lineWidth = 5;
-        ctx.beginPath();
-        for(const move of mouseclicks){
-            ctx.strokeRect(move.getData().x, move.getData().y,10, 10);
-        }
-        ctx.stroke();
-    }
 
-    printMouseMove(mousemoves: Array<Data>, ctx: any) {
-        ctx.strokeStyle = 'rgba(0,0,0,0.8)';
-        ctx.lineWidth = 5;
-        ctx.beginPath();
-        for(const move of mousemoves){
-            ctx.lineTo(move.getData().x, move.getData().y);
-        }
-        ctx.stroke();
-    }
-
-    printKeyboard(keyboard: Array<Data>, ctx: any) {
-
-    }
-
-    printImage(image: Image, ctx: any){
-        ctx.drawImage(image, 0, 0);
-    }
-
-    applyDataToImage(image: Data, data: Array<Data>) {
+    saveData(data: Array<Data>, flowName: string, agentName: string) {
         return new Promise((resolve, reject) => {
-            const mouseClicks = data.filter(val => {
-                return val.getName() === 'click';
-            });
-            const mouseMovements = data.filter(val => {
-                return val.getName() === 'mousemove';
-            });
-            const keyboard = data.filter(val => {
-                return val.getName() === 'keydown';
-            });
-            if (image) {
-                const canvas = createCanvas(image.getSize().width, image.getSize().height);
-                const ctx = canvas.getContext('2d');
-                const img = new Image();
-                img.onload = () => {
-                    this.printImage(img, ctx);
-                    this.printMouseClick(mouseClicks, ctx);
-                    this.printMouseMove(mouseMovements, ctx);
-                    this.printKeyboard(keyboard, ctx);
-                    const base64data = canvas.toBuffer();
-                    fs.writeFile('./trainingDatas/' + image.getTimestamp() + '-' + Date.now() + '.png', base64data, 'base64', function (err) {
-                        if (err) throw err;
-                        console.log('File saved.');
-                        resolve('ok - image received');
-                    })
-                };
-                img.onerror = err => {
-                    throw err
-                };
-                img.src = image.getData();
+            console.log(flowName);
+            console.log(agentName);
+            if(flowName && agentName) {
+                fs.mkdirSync('./trainingDatas/' + flowName + '/', { recursive: true });
             } else {
-                resolve('ok - only datas');
+                fs.mkdirSync('./trainingDatas/undefined', { recursive: true });
+            }
+            if(!flowName && !agentName) {
+                fs.writeFile('./trainingDatas/undefined/' + this.counter + '.json', JSON.stringify(data), 'utf8', function (err) {
+                    if (err) reject('err');
+                    console.log('Data saved');
+                    resolve('ok');
+                });
+            } else {
+                fs.writeFile('./trainingDatas/' + flowName + '/' + agentName + '_' + this.counter + '.json', JSON.stringify(data), 'utf8', function (err) {
+                    if (err) reject('err');
+                    console.log('Data saved');
+                    resolve('ok');
+                });
             }
         });
-
-    }
-    saveImage(image: Data) {
-        if(image) {
-            this.oldImageData = image;
-        }
     }
 }

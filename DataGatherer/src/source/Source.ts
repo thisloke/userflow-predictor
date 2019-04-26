@@ -1,4 +1,4 @@
-import { Data } from "./../data/Data";
+import { Data } from "../shared/Data";
 
 export class Source {
     private name: string;

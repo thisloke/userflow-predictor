@@ -5,20 +5,30 @@ import { Keyboard } from "./source/keyboard/Keyboard";
 import { Screen } from "./source/screen/Screen";
 
 function main() {
-    const gatherer: Gatherer = new Gatherer([
+    const humanGatherer: Gatherer = new Gatherer([
             new Screen('screen'),
             new Keyboard('keyboard', ['keydown']),
             new Mouse('mouse', ['click', 'mousemove'])
         ]);
 
-    gatherer.start();
+
     //startPrediction(gatherer);
-    startGathering(gatherer);
-  
+//    startGathering([humanGatherer, botGatherer]);
+    startGathering([humanGatherer])
+}
+
+function getFlowName() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('flowName');
+}
+
+function getAgentName() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('agentName');
 }
 
 function startPrediction(gatherer: Gatherer) {
-    const sender: Sender = new Sender(() => gatherer.getData(), 'localhost:4000/predict', 10000);
+    const sender: Sender = new Sender(() => gatherer.getData(), 'localhost:4000/predict',10000);
     sender.start('http')
         .subscribe(
             val => {
@@ -28,14 +38,18 @@ function startPrediction(gatherer: Gatherer) {
 }
 
 
-function startGathering(gatherer: Gatherer) {
-    const sender: Sender = new Sender(() => gatherer.getData(), 'localhost:4100/', 3000);
-    sender.start('ws')
-        .subscribe(
-            val => {
-                console.log(val);
-            }
-        );
+function startGathering(gatherers: Array<Gatherer>) {
+    for(const gatherer of gatherers ) {
+        gatherer.start();
+
+        const sender: Sender = new Sender(() => gatherer.getData(), 'localhost:4100/' + '?agentName='+getAgentName()+'&flowName='+getFlowName(), 1000);
+        sender.start('ws')
+            .subscribe(
+                val => {
+                    console.log(val);
+                }
+            );
+    }
 }
 
 main();
