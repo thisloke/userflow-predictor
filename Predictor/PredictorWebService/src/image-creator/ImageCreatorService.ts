@@ -1,8 +1,25 @@
 import {Data} from "../../../../DataGatherer/src/shared/Data";
 import {createCanvas, Image} from "canvas";
 import fs from "fs";
+import mongoose from "mongoose";
+import {DataSchema} from "../predictor-web-service/models/Data";
 
 export class ImageCreatorService {
+    private mongoEndpoint = 'mongodb://localhost:27017/predictorDatas';
+
+    constructor() {
+        mongoose.Promise = global.Promise;
+        mongoose.connect(this.mongoEndpoint, { useNewUrlParser: true },
+            err => {
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                    console.log('Connected to MongoDb');
+                    this.startProcessing(6, 200);
+                }
+            });
+    }
 
     createImageFromData(data: Array<Data>, name: string) {
         return new Promise((resolve, reject) => {
@@ -124,35 +141,40 @@ export class ImageCreatorService {
     }
 
 
-    public startProcessing(srcPath: string, destPath: string) {
+    public startProcessing(flows: number, agents: number, threshold: number = 5) {
         const that = this;
-        fs.readdir(srcPath, function(err, items) {
-
-            for (var i=0; i<items.length; i++) {
-                const data = fs.readFileSync(srcPath + '/' + items[i]);
-                try {
-                    const jsonData = JSON.parse(data.toString('utf8'));
-                    fs.mkdirSync('./trainingImages/virtual/' + destPath, {recursive: true});
-                    that.createImageFromData(jsonData, items[i].split('.')[0])
-                        .then(res => {
-                            if(res) {
-                                console.log('virtual image ' + ' processed');
-                                that.saveImage(res['data'], './trainingImages/virtual/' + destPath + '/' + res['name'] + '.png');
-                            }
-                        });
-
-                    that.applyDataToImage(jsonData, items[i].split('.')[0])
-                        .then(res => {
-                            if(res) {
-                                console.log('real image ' + ' processed');
-                                that.saveImage(res['data'], './trainingImages/real/' + destPath + '/' + res['name'] + '.png');
-                            }
-                        });
-                } catch (e) {
-                    console.log('file not valid');
-                }
+        const orderedByFlows = [];
+        const promises = [];
+        for(let i=0; i<flows; i++) {
+            for (let j = 0; j < agents; j++) {
+                promises.push(DataSchema.find({
+                    flowName: 'flow'+(i + 1).toString(),
+                    agentName: 'bot_'+(j+1).toString()
+                }, function (error, ids) {
+                    orderedByFlows.push(ids);
+                }));
             }
-        });
+        }
+
+        Promise.all(promises)
+            .then(() => {
+                for(let i = 0; i< flows; i++){
+                    fs.mkdirSync('./trainingImages/virtual/' + 'flow'+(i+1), {recursive: true});
+                }
+                for(let i = 0; i < orderedByFlows.length; i++) {
+                    for (let j of orderedByFlows[i]) {
+                        if(j.data.length > threshold) {
+                            that.createImageFromData(j.data, j.agentName + '_' + j.counter)
+                                .then(res => {
+                                    if (res) {
+                                        console.log('virtual image ' + ' processed');
+                                        that.saveImage(res['data'], './trainingImages/virtual/' + j.flowName + '/' + res['name'] + '.png');
+                                    }
+                                });
+                        }
+                    }
+                }
+            })
 
     }
 }

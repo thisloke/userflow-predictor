@@ -18,8 +18,6 @@ export class Puppet {
     async execMovements(page, flow: {type: string; target: {x: number, y: number, width: number, height: number} }[]){
 
         function humanize(val: number, bounduaries: {min: number, max: number}) {
-            console.log(val);
-            console.log(Math.random() * Math.abs(bounduaries.max));
             return val + (Math.random() * Math.abs(bounduaries.max));
         }
 
@@ -46,5 +44,8 @@ export class Puppet {
         const browser = await puppeteer.launch({headless: false});
         const page = await browser.newPage();
         await this.execMovements(page, this.flow);
+        await page.close();
+        await browser.close();
+        return 'end';
     }
 }

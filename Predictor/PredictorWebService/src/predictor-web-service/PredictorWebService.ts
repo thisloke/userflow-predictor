@@ -3,9 +3,10 @@ import * as WebSocket from 'ws';
 import * as http from 'http';
 import cors from 'cors';
 import * as bodyParser from "body-parser";
-import fs from 'fs';
 import {Data} from "../../../../DataGatherer/src/shared/Data";
 import parser from 'query-string-parser';
+import mongoose from "mongoose";
+import {DataSchema} from './models/Data';
 
 export class PredictorWebService {
 
@@ -15,6 +16,7 @@ export class PredictorWebService {
     private app: express.Application;
     private httpServer: http.Server; 
     private wss: WebSocket.Server;
+    private mongoEndpoint = 'mongodb://localhost:27017/predictorDatas';
 
     private counter: number = 0;
 
@@ -22,6 +24,18 @@ export class PredictorWebService {
         this.url = url;
         this.portApi = portApi;
         this.portWebSocket = portWebSocket;
+        mongoose.Promise = global.Promise;
+        mongoose.connect(this.mongoEndpoint, { useNewUrlParser: true },
+                err => {
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                    console.log('Connected to MongoDb');
+                    this.startPredictor();
+                    this.startTrainer();
+                }
+            });
     }
 
     public startTrainer() {
@@ -38,9 +52,7 @@ export class PredictorWebService {
                 that.counter++;
                 that.saveData(data, queryObj.flowName, queryObj.agentName)
                     .then( (msg) => {
-                        if(msg === 'ok') {
-                            ws.send('trainer - Data saved');
-                        }
+                        ws.send('trainer - Data saved');
                     })
                     .catch( (err) => {
                         ws.send('trainer - Error while saving data');
@@ -71,26 +83,8 @@ export class PredictorWebService {
 
     saveData(data: Array<Data>, flowName: string, agentName: string) {
         return new Promise((resolve, reject) => {
-            console.log(flowName);
-            console.log(agentName);
-            if(flowName && agentName) {
-                fs.mkdirSync('./trainingDatas/' + flowName + '/', { recursive: true });
-            } else {
-                fs.mkdirSync('./trainingDatas/undefined', { recursive: true });
-            }
-            if(!flowName && !agentName) {
-                fs.writeFile('./trainingDatas/undefined/' + this.counter + '.json', JSON.stringify(data), 'utf8', function (err) {
-                    if (err) reject('err');
-                    console.log('Data saved');
-                    resolve('ok');
-                });
-            } else {
-                fs.writeFile('./trainingDatas/' + flowName + '/' + agentName + '_' + this.counter + '.json', JSON.stringify(data), 'utf8', function (err) {
-                    if (err) reject('err');
-                    console.log('Data saved');
-                    resolve('ok');
-                });
-            }
+            const dataSchema = new DataSchema({flowName: flowName, agentName: agentName, counter: this.counter, data: data});
+            resolve(dataSchema.save());
         });
     }
 }
