@@ -39,7 +39,7 @@ export class ImageCreatorService {
             });
 
             //todo da cambiare le dimensioni e renderle dinamiche
-            const canvas = createCanvas(1000, 800);
+            const canvas = createCanvas(150, 150);
             const ctx = canvas.getContext('2d');
             this.printHTMLElements(htmlElements, ctx);
             this.printMouseClick(mouseClicks, ctx);

@@ -8,15 +8,38 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import cv2
 import numpy as np
+import os
+import shutil
+import random
 
 img_width, img_height = 150, 150
-train_data_dir = './UserflowPredictorSystem/predictor/datas/train'
-validation_data_dir = './UserflowPredictorSystem/predictor/datas/test'
+train_data_dir = './Predictor/PredictorNeuralNetwork/datas/userflows/train/'
+validation_data_dir = './Predictor/PredictorNeuralNetwork/datas/userflows/test/'
 nb_train_samples = 2000
 nb_validation_samples = 800
-epochs = 100
+epochs = 20
 batch_size = 16
 
+def copytree(src, dst, symlinks=False, ignore=None):
+    for item in os.listdir(src):
+        s = os.path.join(src, item)
+        d = os.path.join(dst, item)
+        if os.path.isdir(s):
+            shutil.copytree(s, d, symlinks, ignore)
+        else:
+            shutil.copy2(s, d)
+
+def populateDatas():
+    copytree('./Predictor/PredictorWebService/trainingImages/virtual', './Predictor/PredictorNeuralNetwork/datas/userflows/train')
+    offset = 0
+    for folder in os.listdir('./Predictor/PredictorNeuralNetwork/datas/userflows/train'):
+        numberOfFiles = len([name for name in os.listdir('./Predictor/PredictorNeuralNetwork/datas/userflows/train/' + folder)])
+        numberOfTestFiles = int(numberOfFiles / 10)
+        for idx in range(0,numberOfTestFiles):
+            file =  os.listdir('./Predictor/PredictorNeuralNetwork/datas/userflows/train/' + folder)[random.randint(0,numberOfTestFiles)]
+            shutil.copy2("./Predictor/PredictorNeuralNetwork/datas/userflows/train/" + folder + "/" + file, './Predictor/PredictorNeuralNetwork/datas/userflows/test/' + str(idx + offset) + '.png')
+        shutil.copy2("./Predictor/PredictorNeuralNetwork/datas/userflows/train/" + folder + "/" + file, './Predictor/PredictorNeuralNetwork/datas/userflows/test/' + str(idx + offset) + '_SEPARATOR.png')
+        offset = numberOfTestFiles
 
 if K.image_data_format() == 'channels_first':
     input_shape = (3, img_width, img_height)
@@ -45,7 +68,7 @@ def create_model():
     model.add(Activation('sigmoid'))
 
 
-    model.compile(loss='binary_crossentropy',
+    model.compile(loss='categorical_crossentropy',
                   optimizer='rmsprop',
                   metrics=['accuracy'])
     return model
@@ -66,13 +89,13 @@ def train_model(model):
         train_data_dir,
         target_size=(img_width, img_height),
         batch_size=batch_size,
-        class_mode='binary')
+        class_mode='categorical')
 
     validation_generator = test_datagen.flow_from_directory(
         validation_data_dir,
         target_size=(img_width, img_height),
         batch_size=batch_size,
-        class_mode='binary')
+        class_mode='categorical')
 
     model.fit_generator(
         train_generator,
@@ -81,7 +104,7 @@ def train_model(model):
         validation_data=validation_generator,
         validation_steps=nb_validation_samples // batch_size)
 
-    model.save_weights('./UserflowPredictorSystem/first_try2.h5')
+    model.save_weights('./Predictor/PredictorNeuralNetwork/weights/userflows.h5')
     return model
 
 
@@ -93,29 +116,26 @@ def load_trained_model(weights_path):
 
 
 def predict(number, model):
-    img = cv2.imread("./UserflowPredictorSystem/predictor/datas/test/" + str(number) + ".jpg")
-    im = mpimg.imread("./UserflowPredictorSystem/predictor/datas/test/" + str(number) + ".jpg")
+    img = cv2.imread("./Predictor/PredictorNeuralNetwork/datas/userflows/test/" + str(number) + ".png")
+    im = mpimg.imread("./Predictor/PredictorNeuralNetwork/datas/userflows/test/" + str(number) + ".png")
     plt.imshow(im)
     img = cv2.resize(img, (img_width,img_height))
     img = img.reshape(1, img_width, img_height, 3)
     res = model.predict(img)
-    if res == 1:
-        print('DOG')
-    else:
-        print('CAT')
+    print(res)
 
 model = create_model()
+populateDatas()
+
 model = train_model(model)
 
-import os
 os.getcwd()
 
-trained_model = load_trained_model("./UserflowPredictorSystem/first_try2.h5")
+trained_model = load_trained_model("./Predictor/PredictorNeuralNetwork/weights/userflows.h5")
 trained_model.summary()
-import random
-predict(random.randint(1,12500), trained_model)
-predict('lolly', model)
+num = random.randint(1,10)
+print(num)
+predict(num, trained_model)
 
 
-
-print(np.argmax(loaded_model.predict(img)))
+print(np.argmax(trained_model.predict(img)))
