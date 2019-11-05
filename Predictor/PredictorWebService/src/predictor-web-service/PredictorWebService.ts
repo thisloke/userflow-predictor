@@ -3,7 +3,7 @@ import * as WebSocket from 'ws';
 import * as http from 'http';
 import cors from 'cors';
 import * as bodyParser from "body-parser";
-import {Data} from "../../../../DataGatherer/src/shared/Data";
+import {Data} from "../../../../Shared/Data";
 import parser from 'query-string-parser';
 import mongoose from "mongoose";
 import {DataSchema} from './models/Data';
@@ -16,7 +16,7 @@ export class PredictorWebService {
     private app: express.Application;
     private httpServer: http.Server; 
     private wss: WebSocket.Server;
-    private mongoEndpoint = 'mongodb://localhost:27017/predictorDatas';
+    private mongoEndpoint = 'mongodb://ups_database:27017/predictorDatas';
 
     private counter: number = 0;
 
@@ -25,7 +25,7 @@ export class PredictorWebService {
         this.portApi = portApi;
         this.portWebSocket = portWebSocket;
         mongoose.Promise = global.Promise;
-        mongoose.connect(this.mongoEndpoint, { useNewUrlParser: true },
+        mongoose.connect(this.mongoEndpoint, { useNewUrlParser: true, useUnifiedTopology: true },
                 err => {
                 if (err) {
                     console.log(err);

@@ -1,7 +1,7 @@
 import { PredictorWebService } from "./PredictorWebService";
 
 function main() { 
-    const predictorWebService = new PredictorWebService('/', 4000, 4100);
+    const predictorWebService = new PredictorWebService('/', 8002, 8001);
 
 }
 

@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  ups_gatherer:
+    image: ups_gatherer
+    networks:
+      app_net:
+    depends_on:
+      - ups_predictor
+    build:
+      context: .
+      dockerfile: apacheDockerfile.yml
+    deploy:
+      replicas: 1
+    volumes:
+      - "./DataGatherer/dist\
+          :/app"
+    ports:
+      - "80:8080"
+
+  ups_predictor:
+    image: ups_predictor
+    networks:
+      app_net:
+    depends_on:
+      - ups_database
+    build:
+      context: .
+      dockerfile: nodeDockerfile.yml
+    command: pm2-docker /usr/app/dist/Predictor/PredictorWebService/src/predictor-web-service/main.js
+    deploy:
+      replicas: 1
+    volumes:
+      - "./Predictor/PredictorWebService/dist\
+          :/usr/app/dist\
+          :ro"
+      - "./Predictor/PredictorWebService/node_modules\
+          :/usr/app/node_modules\
+          :ro"
+    ports:
+      - "8001:8001"
+
+  ups_database:
+    image: ups_database
+    networks:
+      app_net:
+    build:
+      context: .
+      dockerfile: mongoDockerfile.yml
+    volumes:
+      - "./datas/mongo\
+          :/data/db\
+          :rw"
+    ports:
+      - "27017:27017"
+
+networks:
+  app_net:

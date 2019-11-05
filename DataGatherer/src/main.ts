@@ -4,6 +4,8 @@ import { Gatherer } from "./gatherer/Gatherer";
 import { Keyboard } from "./source/keyboard/Keyboard";
 import { Screen } from "./source/screen/Screen";
 
+declare var UPS_CONFIGS;
+
 function main() {
     const humanGatherer: Gatherer = new Gatherer([
             new Screen('screen'),
@@ -28,7 +30,7 @@ function getAgentName() {
 }
 
 function startPrediction(gatherer: Gatherer) {
-    const sender: Sender = new Sender(() => gatherer.getData(), 'localhost:4000/predict',10000);
+    const sender: Sender = new Sender(() => gatherer.getData(), UPS_CONFIGS.gatherer_ws_url,10000);
     sender.start('http')
         .subscribe(
             val => {
@@ -42,7 +44,7 @@ function startGathering(gatherers: Array<Gatherer>) {
     for(const gatherer of gatherers ) {
         gatherer.start();
 
-        const sender: Sender = new Sender(() => gatherer.getData(), 'localhost:4100/' + '?agentName='+getAgentName()+'&flowName='+getFlowName(), 1000);
+        const sender: Sender = new Sender(() => gatherer.getData(), UPS_CONFIGS.gatherer_ws_url+ '?agentName='+getAgentName()+'&flowName='+getFlowName(), 1000);
         sender.start('ws')
             .subscribe(
                 val => {

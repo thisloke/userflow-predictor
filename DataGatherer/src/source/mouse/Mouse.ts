@@ -1,5 +1,5 @@
 import { Source } from '../Source';
-import {Data} from "../../shared/Data";
+import {Data} from "../../../../Shared/Data";
 
 export class Mouse extends Source {
 

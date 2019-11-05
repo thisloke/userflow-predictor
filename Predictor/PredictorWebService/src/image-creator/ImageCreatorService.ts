@@ -1,4 +1,4 @@
-import {Data} from "../../../../DataGatherer/src/shared/Data";
+import {Data} from "../../../../Shared/Data";
 import {createCanvas, Image} from "canvas";
 import fs from "fs";
 import mongoose from "mongoose";

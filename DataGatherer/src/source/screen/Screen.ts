@@ -1,6 +1,6 @@
 import { Source } from '../Source';
 import Html2CanvasStatic from "html2canvas";
-import {Data} from "../../shared/Data";
+import {Data} from "../../../../Shared/Data";
 
 export class Screen extends Source {
 

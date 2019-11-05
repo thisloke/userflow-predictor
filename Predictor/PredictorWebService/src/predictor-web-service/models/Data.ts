@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import {Data} from "../../../../../DataGatherer/src/shared/Data";
+import {Data} from "../../../../../Shared/Data";
 import {Schema} from "mongoose";
 
 const DataSchema_:Schema = new Schema(

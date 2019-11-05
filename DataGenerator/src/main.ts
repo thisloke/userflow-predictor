@@ -1,5 +1,5 @@
 import {Puppet} from "./Puppet";
-import {flows} from "../../DataGeneratorPuppets/src/datas/flow";
+import {flows} from "../../DataGenerator/src/datas/flow";
 
 function main() {
 

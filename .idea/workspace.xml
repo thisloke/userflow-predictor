@@ -1,360 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/DataGatherer/src/index.html" line="11" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="603d916b-6d0f-43a7-809c-21ce2bcb2533" name="Default Changelist" comment="Feat: scaled">
+      <change afterPath="$PROJECT_DIR$/DataGatherer/src/index.prod.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apacheDockerfile.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mongoDockerfile.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nodeDockerfile.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGeneratorPuppets/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGeneratorPuppets/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Predictor/PredictorNeuralNetwork/Predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorNeuralNetwork/Predictor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Predictor/PredictorNeuralNetwork/weights/first_try.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Predictor/PredictorNeuralNetwork/weights/first_try2.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGatherer/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGatherer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGatherer/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGatherer/src/sender/Sender.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/sender/Sender.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGatherer/src/shared/Data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGatherer/src/source/Source.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/source/Source.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGatherer/src/source/mouse/Mouse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/source/mouse/Mouse.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGatherer/src/source/screen/Screen.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/source/screen/Screen.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGenerator/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGenerator/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/src/image-creator/ImageCreatorService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/src/image-creator/ImageCreatorService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/PredictorWebService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/PredictorWebService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/models/Data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/models/Data.ts" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockerExecCommand">
+    <ExecCommand>
+      <option name="command" value="bash" />
+      <option name="imageId" value="ups_database" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="bash" />
+      <option name="imageId" value="ups_gatherer" />
+    </ExecCommand>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="UserflowPredictorSystem" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DataGeneratorPuppets/src/main.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataGatherer/src/sender/Sender.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataGatherer/src/shared/Data.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataGeneratorPuppets/src/Puppet.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="13" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataGeneratorPuppets/src/event-flow/MouseEventFlow.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataGeneratorPuppets/src/datas/flow.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/models/Data.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataGatherer/src/source/mouse/Mouse.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>stroke</find>
-      <find>window</find>
-      <find>req</find>
-      <find>getTi</find>
-      <find>json</find>
-      <find>MAth.max</find>
-      <find>ctx:</find>
-      <find>console.log</find>
-      <find>Data sa</find>
-      <find>backgr</find>
-      <find>white</find>
-      <find>setInte</find>
-      <find>sender.sta</find>
-      <find>random</find>
-      <find>'move</find>
-      <find>flow</find>
-      <find>get</find>
-      <find>gl</find>
-      <find>console.l</find>
-      <find>MouseEventF</find>
-      <find>docum</find>
-      <find>.style</find>
-      <find>new Data</find>
-      <find>atetime</find>
-      <find>connect</find>
-      <find>console</find>
-      <find>constructor</find>
-      <find>canvas</find>
-      <find>flowName</find>
-      <find>DataSchema</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/great-big-angular2-example/README.md" />
-        <option value="$PROJECT_DIR$/great-big-angular2-example/src/index.html" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/data/Data.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/source/generator/Generator.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/shared/Flow.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/shared/EventFlow.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/shared/event-flow/EventFlow.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/datas/flow.json" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/shared/event-flow/MouseEventFlow.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/datas/flow.ts" />
-        <option value="$PROJECT_DIR$/DataGeneratorPuppets/DataGeneratorPuppets.ts" />
-        <option value="$PROJECT_DIR$/DataGeneratorPuppets/src/DataGeneratorPuppets.ts" />
-        <option value="$PROJECT_DIR$/DataGeneratorPuppets/package.json" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/gatherer/Gatherer.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/index.html" />
-        <option value="$PROJECT_DIR$/DataGeneratorPuppets/src/datas/flow.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/shared/Data.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/source/keyboard/Keyboard.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/source/Source.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/source/screen/Screen.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/source/mouse/Mouse.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/main.ts" />
-        <option value="$PROJECT_DIR$/DataGatherer/src/sender/Sender.ts" />
-        <option value="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/main.ts" />
-        <option value="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/PredictorWebService.ts" />
-        <option value="$PROJECT_DIR$/Predictor/PredictorWebService/src/image-creator/main.ts" />
-        <option value="$PROJECT_DIR$/DataGeneratorPuppets/src/Puppet.ts" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Predictor/PredictorWebService/src/image-creator/ImageCreatorService.ts" />
-        <option value="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/models/Data.ts" />
-        <option value="$PROJECT_DIR$/DataGeneratorPuppets/src/main.ts" />
-        <option value="$PROJECT_DIR$/Predictor/PredictorWebService/package.json" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-674" />
-    <option name="y" value="-12" />
-    <option name="width" value="2998" />
-    <option name="height" value="1599" />
-  </component>
+  <component name="ProjectId" id="1R67xalNAo4kBo6TFnY0TeCrYZu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataGatherer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataGatherer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataGatherer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sender" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataGatherer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataGatherer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataGatherer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="keyboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataGatherer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="mouse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataGeneratorPuppets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataGeneratorPuppets" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataGeneratorPuppets" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="datas" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataGeneratorPuppets" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="event-flow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="Predictor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="Predictor" type="462c0819:PsiDirectoryNode" />
-              <item name="PredictorNeuralNetwork" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="Predictor" type="462c0819:PsiDirectoryNode" />
-              <item name="PredictorWebService" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="Predictor" type="462c0819:PsiDirectoryNode" />
-              <item name="PredictorWebService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="Predictor" type="462c0819:PsiDirectoryNode" />
-              <item name="PredictorWebService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="image-creator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserflowPredictorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserflowPredictorSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="Predictor" type="462c0819:PsiDirectoryNode" />
-              <item name="PredictorWebService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="predictor-web-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Work/proman-web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DataGatherer/src" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\Lorenzo\UserflowPredictorSystem\DataGeneratorPuppets\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/Predictor/PredictorWebService/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DataGatherer/src" />
       <recent name="C:\Users\Lorenzo\UserflowPredictorSystem\DataGeneratorPuppets" />
       <recent name="C:\Users\Lorenzo\UserflowPredictorSystem\Predictor\PredictorWebService\src\image-creator" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/configs/gatherer/vhost" />
+      <recent name="$PROJECT_DIR$/Shared" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\Lorenzo\UserflowPredictorSystem\DataGeneratorPuppets\src" />
       <recent name="C:\Users\Lorenzo\UserflowPredictorSystem\DataGatherer\src\shared\event-flow" />
-      <recent name="C:\Users\Lorenzo\UserflowPredictorSystem\Predictor\PredictorWebService\src\predictor-web-service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -369,7 +85,52 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.dev:imageCreator">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment (1)">
+    <configuration name="docker-compose.yml: Compose Deployment (1)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.ups_gatherer: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="ups_gatherer" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="dockerfile.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="dockerfile.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="build-ws:prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Predictor/PredictorWebService/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build-ws:prod" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/DataGatherer/package.json" />
       <command value="run" />
@@ -380,55 +141,72 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="build:puppet" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/DataGeneratorPuppets/package.json" />
+    <configuration name="build:prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/DataGatherer/package.json" />
       <command value="run" />
       <scripts>
-        <script value="build:puppet" />
+        <script value="build:prod" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="dev:imageCreator" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/Predictor/PredictorWebService/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev:imageCreator" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="dev:puppet" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/DataGeneratorPuppets/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev:puppet" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="dev:ws" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/Predictor/PredictorWebService/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev:ws" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Docker.dockerfile.yml: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
+      <item itemvalue="npm.build" />
+      <item itemvalue="Docker.docker-compose.yml.ups_gatherer: Compose Deployment" />
+      <item itemvalue="npm.build:prod" />
+      <item itemvalue="npm.build-ws:prod" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev:imageCreator" />
-        <item itemvalue="npm.dev:puppet" />
-        <item itemvalue="npm.dev:ws" />
-        <item itemvalue="npm.build:puppet" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
+        <item itemvalue="npm.build:prod" />
+        <item itemvalue="npm.build-ws:prod" />
         <item itemvalue="npm.build" />
+        <item itemvalue="Docker.docker-compose.yml.ups_gatherer: Compose Deployment" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1ad5b4b6" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1ad5b4b6" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@516acf99" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1ad5b4b6" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@516acf99" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4f81c280" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1ad5b4b6" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@516acf99" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4d14d318" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1ad5b4b6" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@516acf99" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@66af67db" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -457,6 +235,11 @@
       <workItem from="1563870811276" duration="315000" />
       <workItem from="1563972735642" duration="2206000" />
       <workItem from="1564047438948" duration="1281000" />
+      <workItem from="1568975941119" duration="2637000" />
+      <workItem from="1569872860582" duration="216000" />
+      <workItem from="1571588208616" duration="549000" />
+      <workItem from="1571650740912" duration="14000" />
+      <workItem from="1572936055537" duration="9213000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: Added websocket comm. for DataGatherer and PredictorWebService">
       <created>1554992034761</created>
@@ -468,323 +251,24 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91866000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49818182" visible="true" weight="0.26966292" />
-      <window_info id="Structure" order="1" sideWeight="0.5018182" side_tool="true" weight="0.19125395" />
-      <window_info id="Favorites" order="2" sideWeight="0.50060606" side_tool="true" weight="0.24868283" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36049855" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Feat: Added websocket comm. for DataGatherer and PredictorWebService" />
     <option name="LAST_COMMIT_MESSAGE" value="Feat: Added websocket comm. for DataGatherer and PredictorWebService" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DataGatherer/node_modules/html2canvas/dist/html2canvas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="507" column="2720" selection-start-line="507" selection-start-column="2706" selection-end-line="507" selection-end-column="2720" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/node_modules/@types/html2canvas/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/great-big-angular2-example/src/index.html" />
-    <entry file="file://$PROJECT_DIR$/great-big-angular2-example/README.md" />
-    <entry file="file://$PROJECT_DIR$/great-big-angular2-example/package.json" />
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/node_modules/canvas/types/index.d.ts" />
-    <entry file="file://$PROJECT_DIR$/DataGatherer/node_modules/typescript/lib/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="18265" column="5" selection-start-line="18265" selection-start-column="5" selection-end-line="18265" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/source/generator/Generator.ts" />
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/shared/Flow.ts" />
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/shared/event-flow/EventFlow.ts" />
-    <entry file="file://$PROJECT_DIR$/DataGatherer/node_modules/rxios/dist/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGeneratorPuppets/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/dist/bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/dist/DataGeneratorPuppets/src/event-flow/MouseEventFlow.js" />
-    <entry file="file://$PROJECT_DIR$/DataGatherer/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorNeuralNetwork/Predictor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorNeuralNetwork/datas/train/cat/cat.440.jpg" />
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorNeuralNetwork/datas/train/cat/cat.445.jpg" />
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/gatherer/Gatherer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="55" lean-forward="true" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/source/keyboard/Keyboard.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/source/screen/Screen.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#12;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/source/Source.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/node_modules/mongodb/lib/mongo_client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/node_modules/@types/node/globals.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="162" column="12" selection-start-line="162" selection-start-column="12" selection-end-line="162" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/dist/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/PredictorWebService.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="52" column="74" lean-forward="true" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGeneratorPuppets/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/src/image-creator/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/src/image-creator/ImageCreatorService.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1284">
-          <caret line="166" column="90" selection-start-line="166" selection-start-column="90" selection-end-line="166" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/sender/Sender.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/shared/Data.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGeneratorPuppets/src/Puppet.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGeneratorPuppets/src/event-flow/MouseEventFlow.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGeneratorPuppets/src/datas/flow.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/models/Data.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGatherer/src/source/mouse/Mouse.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Predictor/PredictorWebService/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataGeneratorPuppets/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

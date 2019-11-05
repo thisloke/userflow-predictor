@@ -4,14 +4,12 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
-    "@types/express": "^4.16.1",
-    "@types/mongoose": "^5.3.27",
     "body-parser": "^1.18.3",
     "canvas": "^2.4.1",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mongodb": "^3.2.3",
-    "mongoose": "^5.7.5",
+    "mongodb": "^3.3.3",
+    "mongoose": "^5.7.7",
     "nodemon": "^1.18.10",
     "query-string-parser": "^0.2.3",
     "ws": "^6.2.1"
@@ -19,16 +17,17 @@
   "devDependencies": {
     "@types/node": "^11.13.0",
     "@types/ws": "^6.0.1",
+    "@types/express": "^4.16.1",
+    "@types/mongoose": "^5.5.29",
     "ts-node": "^8.0.3",
     "typescript": "^3.4.2",
     "typescript-eslint-parser": "^22.0.0"
   },
   "scripts": {
-    "build:ws": "tsc -w",
-    "dev:ws": "ts-node src/predictor-web-service/main.ts",
-    "dev:imageCreator": "ts-node src/image-creator/main.ts",
-    "start:ws": "nodemon ./dist/main.js",
-    "prod:ws": "npm run build:ws && npm run start:ws"
+    "build-ws:prod": "tsc",
+    "build-ws:watch": "tsc -w",
+    "start-ws": "ts-node src/predictor-web-service/main.ts",
+    "start-imageCreator": "ts-node src/image-creator/main.ts"
   },
   "author": "",
   "license": "ISC"

@@ -1,7 +1,7 @@
 import { interval, Observable, of } from 'rxjs';
 import { filter, flatMap, delay } from 'rxjs/operators';
 import { Rxios } from 'rxios';
-import {Data} from "../shared/Data";
+import {Data} from "../../../Shared/Data";
 
 export class Sender {
     private url: string;
