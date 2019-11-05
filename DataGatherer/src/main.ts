@@ -21,12 +21,12 @@ function main() {
 
 function getFlowName() {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('flowName');
+    return urlParams.get('flowName') === null ? 1 : urlParams.get('flowName');
 }
 
 function getAgentName() {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('agentName');
+    return urlParams.get('agentName') === null ? 1: urlParams.get('agentName');
 }
 
 function startPrediction(gatherer: Gatherer) {
@@ -44,7 +44,7 @@ function startGathering(gatherers: Array<Gatherer>) {
     for(const gatherer of gatherers ) {
         gatherer.start();
 
-        const sender: Sender = new Sender(() => gatherer.getData(), UPS_CONFIGS.gatherer_ws_url+ '?agentName='+getAgentName()+'&flowName='+getFlowName(), 1000);
+        const sender: Sender = new Sender(() => gatherer.getData(), UPS_CONFIGS.gatherer_ws_url+ '?agentName=bot_'+getAgentName()+'&flowName=flow'+getFlowName(), 1000);
         sender.start('ws')
             .subscribe(
                 val => {

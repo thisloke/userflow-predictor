@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="603d916b-6d0f-43a7-809c-21ce2bcb2533" name="Default Changelist" comment="Feat: scaled">
-      <change afterPath="$PROJECT_DIR$/DataGatherer/src/index.prod.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apacheDockerfile.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongoDockerfile.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nodeDockerfile.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGatherer/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGatherer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataGatherer/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGatherer/src/sender/Sender.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/sender/Sender.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGatherer/src/shared/Data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGatherer/src/source/Source.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/source/Source.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGatherer/src/source/mouse/Mouse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/source/mouse/Mouse.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGatherer/src/source/screen/Screen.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/source/screen/Screen.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataGenerator/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGenerator/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/src/image-creator/ImageCreatorService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/src/image-creator/ImageCreatorService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/PredictorWebService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/PredictorWebService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/models/Data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/models/Data.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment (1)">
+  <component name="RunManager" selected="npm.start-imageCreator">
     <configuration name="docker-compose.yml: Compose Deployment (1)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -97,19 +78,6 @@
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings />
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.ups_gatherer: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="ups_gatherer" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
       </deployment>
       <method v="2" />
     </configuration>
@@ -151,22 +119,32 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start-imageCreator" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Predictor/PredictorWebService/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start-imageCreator" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.dockerfile.yml: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
       <item itemvalue="npm.build" />
-      <item itemvalue="Docker.docker-compose.yml.ups_gatherer: Compose Deployment" />
       <item itemvalue="npm.build:prod" />
       <item itemvalue="npm.build-ws:prod" />
+      <item itemvalue="npm.start-imageCreator" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start-imageCreator" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
         <item itemvalue="npm.build:prod" />
         <item itemvalue="npm.build-ws:prod" />
         <item itemvalue="npm.build" />
-        <item itemvalue="Docker.docker-compose.yml.ups_gatherer: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -178,29 +156,6 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1ad5b4b6" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1ad5b4b6" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@516acf99" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1ad5b4b6" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@516acf99" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4f81c280" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1ad5b4b6" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@516acf99" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4d14d318" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1ad5b4b6" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@516acf99" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@66af67db" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -239,7 +194,8 @@
       <workItem from="1569872860582" duration="216000" />
       <workItem from="1571588208616" duration="549000" />
       <workItem from="1571650740912" duration="14000" />
-      <workItem from="1572936055537" duration="9213000" />
+      <workItem from="1572936055537" duration="9527000" />
+      <workItem from="1572945879186" duration="1102000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: Added websocket comm. for DataGatherer and PredictorWebService">
       <created>1554992034761</created>
