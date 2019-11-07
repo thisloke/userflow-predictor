@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="603d916b-6d0f-43a7-809c-21ce2bcb2533" name="Default Changelist" comment="Feat: scaled">
+    <list default="true" id="603d916b-6d0f-43a7-809c-21ce2bcb2533" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGatherer/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGatherer/src/index.prod.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/index.prod.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataGatherer/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataGatherer/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/src/image-creator/ImageCreatorService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/src/image-creator/ImageCreatorService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/PredictorWebService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Predictor/PredictorWebService/src/predictor-web-service/PredictorWebService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start-imageCreator">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment (1)">
     <configuration name="docker-compose.yml: Compose Deployment (1)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -119,11 +122,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start-imageCreator" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="start-ws" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/Predictor/PredictorWebService/package.json" />
       <command value="run" />
       <scripts>
-        <script value="start-imageCreator" />
+        <script value="start-ws" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -132,19 +135,19 @@
     <list>
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.dockerfile.yml: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
+      <item itemvalue="npm.start-ws" />
       <item itemvalue="npm.build" />
       <item itemvalue="npm.build:prod" />
       <item itemvalue="npm.build-ws:prod" />
-      <item itemvalue="npm.start-imageCreator" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start-imageCreator" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
         <item itemvalue="npm.build:prod" />
         <item itemvalue="npm.build-ws:prod" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.start-ws" />
       </list>
     </recent_temporary>
   </component>
@@ -152,12 +155,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1ad5b4b6" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -195,7 +193,8 @@
       <workItem from="1571588208616" duration="549000" />
       <workItem from="1571650740912" duration="14000" />
       <workItem from="1572936055537" duration="9527000" />
-      <workItem from="1572945879186" duration="1102000" />
+      <workItem from="1572945879186" duration="1797000" />
+      <workItem from="1573108855497" duration="2724000" />
     </task>
     <task id="LOCAL-00001" summary="Feat: Added websocket comm. for DataGatherer and PredictorWebService">
       <created>1554992034761</created>
@@ -204,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1554992034761</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fix: image creator service flowName and agentName fixes">
+      <created>1572947070648</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1572947070648</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +231,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Feat: Added websocket comm. for DataGatherer and PredictorWebService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: Added websocket comm. for DataGatherer and PredictorWebService" />
+    <MESSAGE value="Fix: image creator service flowName and agentName fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: image creator service flowName and agentName fixes" />
   </component>
 </project>

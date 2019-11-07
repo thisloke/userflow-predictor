@@ -1,5 +1,17 @@
 <html>
     <head>
+        <script>
+            UPS_CONFIGS = {
+                gatherer_ws_url: 'localhost:8001',
+                predictor_ws_url: 'localhost:8002/predict'
+            }
+        </script>
+        <style>
+            #prediction {
+                position: absolute;
+                bottom: 0;
+            }
+        </style>
         <script src="../dist/bundle.js"></script>
         <script>
            /* const interval = setInterval(() => {
@@ -16,6 +28,8 @@
         </script>
     </head>
     <body>
+
+        <div id="prediction"> Prediction = <div id="prediction_value"></div></div>
         <button>ciao</button>
         <div id="1" style="width: 50px; height: 70px; background-color:red; position: absolute; top: 20px; left: 100px;"></div>
         <div id="2" style="width: 30px; height: 500px; background-color:blue; position: absolute; top: 465px; left: 33px;"></div>

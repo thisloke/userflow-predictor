@@ -14,7 +14,7 @@ function main() {
         ]);
 
 
-    //startPrediction(gatherer);
+    startPrediction(humanGatherer);
 //    startGathering([humanGatherer, botGatherer]);
     startGathering([humanGatherer])
 }
@@ -30,11 +30,15 @@ function getAgentName() {
 }
 
 function startPrediction(gatherer: Gatherer) {
-    const sender: Sender = new Sender(() => gatherer.getData(), UPS_CONFIGS.gatherer_ws_url,10000);
+    const sender: Sender = new Sender(() => gatherer.getData(), UPS_CONFIGS.predictor_ws_url,2000);
     sender.start('http')
         .subscribe(
             val => {
-                console.log(val);
+                if (val) {
+                    const max = Math.max(...val);
+                    const maxIndex = val.indexOf(max.toString());
+                    document.getElementById("prediction_value").innerText = val + '\n Stato probabile: ' + maxIndex;
+                }
             }
         );
 }
@@ -48,7 +52,6 @@ function startGathering(gatherers: Array<Gatherer>) {
         sender.start('ws')
             .subscribe(
                 val => {
-                    console.log(val);
                 }
             );
     }

@@ -68,6 +68,8 @@ export class PredictorWebService {
         this.app.use(bodyParser.urlencoded({ extended: false }));
 
         this.app.post('/predict', function (req, res) {
+
+            //TODO contatta servizio python
             function generateFakeResponse() {
                 return Array.from({length: 20}, () => Math.random().toPrecision(2));
             }

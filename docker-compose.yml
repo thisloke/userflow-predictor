@@ -39,6 +39,7 @@ services:
           :ro"
     ports:
       - "8001:8001"
+      - "8002:8002"
 
   ups_database:
     image: ups_database
